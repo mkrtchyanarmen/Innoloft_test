@@ -4,12 +4,15 @@ import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
 import svgr from 'vite-plugin-svgr';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [checker({ typescript: true }), react(), svgr({ exportAsDefault: true })],
   resolve: {
     alias: {
-      '@config': resolve(__dirname, './src/config'),
+      '@layout': resolve(__dirname, './src/layout'),
+      '@assets': resolve(__dirname, './src/assets'),
+      '@app': resolve(__dirname, './src/app'),
+      '@pages': resolve(__dirname, './src/pages'),
+      '@components': resolve(__dirname, './src/components'),
     },
   },
   server: {
